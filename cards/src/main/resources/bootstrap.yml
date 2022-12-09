@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cards
+  cloud:
+    config:
+      enabled: true
+      profile: dev
+      uri: http://localhost:7071/

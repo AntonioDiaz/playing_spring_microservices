@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-  @Value("${loans.emoji}")
+  @Value("${loans.emoji:\uD83D\uDE2D}")
   String emoji;
-  @Value("${loans.welcome}")
+  @Value("${loans.welcome:error}")
   String welcome;
 
   @RequestMapping("/")

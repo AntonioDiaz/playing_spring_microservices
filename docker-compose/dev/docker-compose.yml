@@ -1,0 +1,69 @@
+services:
+
+  configserver:
+    image: adiazarroyo/configserver:latest
+    mem_limit: 700m
+    ports:
+      - "8071:8071"
+    networks:
+      - adiaz-network
+
+  accounts:
+    image: adiazarroyo/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8000"
+    networks:
+      - adiaz-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 240s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
+  loans:
+    image: adiazarroyo/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8081:8100"
+    networks:
+      - adiaz-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 240s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/      
+
+  cards:
+    image: adiazarroyo/cards:latest
+    mem_limit: 700m
+    ports:
+      - "8082:8200"
+    networks:
+      - adiaz-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 240s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/ 
+
+networks:
+  adiaz-network:
