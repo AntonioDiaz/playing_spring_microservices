@@ -1,14 +1,22 @@
 package com.adiaz.accounts.controllers;
 
+import com.adiaz.accounts.config.AccountsServiceConfig;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@AllArgsConstructor
 public class HomeController {
+
+  private AccountsServiceConfig accountsServiceConfig;
 
   @RequestMapping("/")
   public ResponseEntity<String>home(){
-    return ResponseEntity.ok("accounts ✌️");
+    String msg = String.format("%s %s",
+            accountsServiceConfig.getWelcome(),
+            accountsServiceConfig.getEmoji());
+    return ResponseEntity.ok(msg);
   }
 }
