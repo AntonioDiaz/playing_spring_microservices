@@ -1,3 +1,5 @@
+encrypt:
+  key: xxxxxxxx
 server:
   port: 8071
 spring:

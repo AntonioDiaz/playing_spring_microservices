@@ -14,9 +14,10 @@ public class HomeController {
 
   @RequestMapping("/")
   public ResponseEntity<String>home(){
-    String msg = String.format("%s %s",
+    String msg = String.format("%s %s <br> password: %s",
             accountsServiceConfig.getWelcome(),
-            accountsServiceConfig.getEmoji());
+            accountsServiceConfig.getEmoji(),
+            accountsServiceConfig.getPassword());
     return ResponseEntity.ok(msg);
   }
 }

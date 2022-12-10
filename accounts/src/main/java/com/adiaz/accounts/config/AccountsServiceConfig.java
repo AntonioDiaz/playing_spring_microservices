@@ -14,4 +14,5 @@ import org.springframework.context.annotation.Configuration;
 public class AccountsServiceConfig {
   private String emoji;
   private String welcome;
+  private String password;
 }
