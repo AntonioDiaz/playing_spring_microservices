@@ -39,7 +39,7 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 5s
+        delay: 10s
         max_attempts: 10
         window: 240s
     environment:
@@ -58,11 +58,12 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 5s
+        delay: 15s
         max_attempts: 10
         window: 240s
     environment:
       SPRING_PROFILES_ACTIVE: prod
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
 networks:
   adiaz-network:

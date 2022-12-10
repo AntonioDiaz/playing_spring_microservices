@@ -2,7 +2,7 @@ server:
   port: 8071
 spring:
   application:
-    name: config-server
+    name: configserver
   cloud:
     config:
       server:

@@ -14,7 +14,7 @@ public class HomeController {
 
   @RequestMapping("/")
   public ResponseEntity<String>home(){
-    String msg = String.format("vamos -> %s %s",
+    String msg = String.format("*vamos -> %s %s",
             cardsServiceConfig.getWelcome(),
             cardsServiceConfig.getEmoji());
     return ResponseEntity.ok(msg);
