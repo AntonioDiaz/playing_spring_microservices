@@ -304,12 +304,20 @@ https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share
 * Add annotation `@EnableEurekaServer`
 * Add properties to application properties:
 ```properties
-spring.application.name=eureka
+spring.application.name=eurekaserver
 spring.config.import=optional:configserver:http://localhost:8071
 ```
 * On property for project add new file for eureka server properties:
-* 
+```properties
+server.port=8070
+eureka.instance.hostname=localhost
+eureka.client.registerWithEureka=false
+eureka.client.fetchRegistry=false
+eureka.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/
+```  
 
+* Start Eureka Server project and have a look to the Eureka dashboard:  
+<img src="https://antoniodiaz.github.io/images/microservices/eureka.png" width="600"/>  
 
 ## 9. Making microservices resilent.
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
