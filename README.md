@@ -21,6 +21,7 @@
   - [Refresh properties](#refresh-properties)
   - [Encryption \& decryption properties](#encryption--decryption-properties)
 - [8. Service discovery \& registration.](#8-service-discovery--registration)
+  - [Example](#example)
 - [9. Making microservices resilent.](#9-making-microservices-resilent)
 - [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
@@ -292,6 +293,22 @@ accounts.password={cipher}87be552649d61b025b42e4f3a2272e5873da64b2652f9da6bde18a
 https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share_link
 
 <img src="https://antoniodiaz.github.io/images/microservices/service_discovery.png" width="600"/>  
+
+### Example
+* Create microservice project: a new Spring Boot Project and add dependences: 
+  * `Actuator`
+  * `Eureka Server`
+  * `Config Client`  
+<img src="https://antoniodiaz.github.io/images/microservices/eureka_config_server.png" width="600"/>  
+
+* Add annotation `@EnableEurekaServer`
+* Add properties to application properties:
+```properties
+spring.application.name=eureka
+spring.config.import=optional:configserver:http://localhost:8071
+```
+* On property for project add new file for eureka server properties:
+* 
 
 
 ## 9. Making microservices resilent.
