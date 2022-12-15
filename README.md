@@ -21,7 +21,8 @@
   - [Refresh properties](#refresh-properties)
   - [Encryption \& decryption properties](#encryption--decryption-properties)
 - [8. Service discovery \& registration.](#8-service-discovery--registration)
-  - [Example](#example)
+  - [Example: Eureka Server](#example-eureka-server)
+  - [Example: Microservice Eureka client](#example-microservice-eureka-client)
 - [9. Making microservices resilent.](#9-making-microservices-resilent)
 - [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
@@ -294,7 +295,7 @@ https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share
 
 <img src="https://antoniodiaz.github.io/images/microservices/service_discovery.png" width="600"/>  
 
-### Example
+### Example: Eureka Server
 * Create microservice project: a new Spring Boot Project and add dependences: 
   * `Actuator`
   * `Eureka Server`
@@ -315,9 +316,43 @@ eureka.client.registerWithEureka=false
 eureka.client.fetchRegistry=false
 eureka.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/
 ```  
-
 * Start Eureka Server project and have a look to the Eureka dashboard:  
 <img src="https://antoniodiaz.github.io/images/microservices/eureka.png" width="600"/>  
+
+### Example: Microservice Eureka client
+* Add dependencies to `pom.xml`, for now only is required: `spring-cloud-starter-netflix-eureka-client`
+```xml
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+```
+
+* Adding properties:
+```properties
+eureka.instance.preferIpAdress = true
+eureka.client.registerWithEureka = true
+eureka.client.fetchRegistry = true
+eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
+
+info.app.name=Microservice for ACCOUNTS
+info.app.description=My first microservice for accounts.
+info.app.version=1.0.0
+
+management.info.env.enabled = true
+
+endpoints.shutdown.enabled = true
+management.endpoint.shutdown.enabled = true
+```  
+* Start Accounts projects
+<img src="https://antoniodiaz.github.io/images/microservices/eureka_with_accounts.png" width="600"/
+
+
+
 
 ## 9. Making microservices resilent.
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
