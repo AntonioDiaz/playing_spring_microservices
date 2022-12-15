@@ -348,7 +348,7 @@ management.info.env.enabled = true
 endpoints.shutdown.enabled = true
 management.endpoint.shutdown.enabled = true
 ```  
-* Start Accounts projects
+* Start Accounts projects  
 <img src="https://antoniodiaz.github.io/images/microservices/eureka_with_accounts.png" width="600"/
 
 
