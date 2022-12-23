@@ -297,14 +297,14 @@ https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share
 
 <img src="https://antoniodiaz.github.io/images/microservices/service_discovery.png" width="600"/>  
 
+<img src="https://antoniodiaz.github.io/images/microservices/service_discovery_pattern.png" width="600"/> 
+
 ### Example: Eureka Server
 * Create microservice project: a new Spring Boot Project and add dependences: 
   * `Actuator`
   * `Eureka Server`
   * `Config Client`  
 <img src="https://antoniodiaz.github.io/images/microservices/eureka_config_server.png" width="600"/>  
-<img src="https://antoniodiaz.github.io/images/microservices/service_discovery_pattern.png" width="600"/>  
-
 
 * Add annotation `@EnableEurekaServer`
 * Add properties to application properties:
