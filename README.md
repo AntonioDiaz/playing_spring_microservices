@@ -23,6 +23,7 @@
 - [8. Service discovery \& registration.](#8-service-discovery--registration)
   - [Example: Eureka Server](#example-eureka-server)
   - [Example: Microservice Eureka client](#example-microservice-eureka-client)
+  - [Eureka: unregister microservice](#eureka-unregister-microservice)
 - [9. Making microservices resilent.](#9-making-microservices-resilent)
 - [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
@@ -350,8 +351,13 @@ management.endpoint.shutdown.enabled = true
 ```  
 * Start Accounts projects  
 
-<img src="https://antoniodiaz.github.io/images/microservices/eureka_with_accounts.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/eureka_dashboard.png" width="600"/>
 
+* Details about of the service
+http://localhost:8070/eureka/apps/accounts
+
+### Eureka: unregister microservice
+* Make a POST to: http://192.168.0.12:8100/actuator/shutdown
 
 
 
