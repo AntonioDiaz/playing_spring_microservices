@@ -24,6 +24,7 @@
   - [Example: Eureka Server](#example-eureka-server)
   - [Example: Microservice Eureka client](#example-microservice-eureka-client)
   - [Eureka: unregister microservice](#eureka-unregister-microservice)
+  - [Heartbeat mechanism to Eureka server for clients](#heartbeat-mechanism-to-eureka-server-for-clients)
 - [9. Making microservices resilent.](#9-making-microservices-resilent)
 - [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
@@ -302,6 +303,8 @@ https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share
   * `Eureka Server`
   * `Config Client`  
 <img src="https://antoniodiaz.github.io/images/microservices/eureka_config_server.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/service_discovery_pattern.png" width="600"/>  
+
 
 * Add annotation `@EnableEurekaServer`
 * Add properties to application properties:
@@ -359,6 +362,11 @@ http://localhost:8070/eureka/apps/accounts
 ### Eureka: unregister microservice
 * Make a POST to: http://192.168.0.12:8100/actuator/shutdown
 
+
+### Heartbeat mechanism to Eureka server for clients
+Every 30 seconds client check the server and returns an error in case the Eureka server does not respond to the heartbeat.
+
+<img src="https://antoniodiaz.github.io/images/microservices/heartbeat_eureka_error.png" width="600"/>
 
 
 ## 9. Making microservices resilent.
