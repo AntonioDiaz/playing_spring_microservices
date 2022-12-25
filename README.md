@@ -25,6 +25,7 @@
   - [Example: Microservice Eureka client](#example-microservice-eureka-client)
   - [Eureka: unregister microservice](#eureka-unregister-microservice)
   - [Heartbeat mechanism to Eureka server for clients](#heartbeat-mechanism-to-eureka-server-for-clients)
+  - [Feign Client to invoke other microservices](#feign-client-to-invoke-other-microservices)
 - [9. Making microservices resilent.](#9-making-microservices-resilent)
 - [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
@@ -206,6 +207,7 @@ Steps:
 spring.profiles.active=native
 spring.cloud.config.server.native.search-locations=classpath:/config
 ```
+<img src="https://antoniodiaz.github.io/images/microservices/config_accounts.png" width="400"/>  
 
 ### Reading properties from repository
 * Create a repository on Github:  
@@ -244,7 +246,7 @@ spring.cloud.config.server.git.search-paths=config
         </dependency>
     </dependencies>
 </dependencyManagement>
-  ```
+```
 
 * Adding properties
 ```properties
@@ -368,7 +370,24 @@ Every 30 seconds client check the server and returns an error in case the Eureka
 
 <img src="https://antoniodiaz.github.io/images/microservices/heartbeat_eureka_error.png" width="600"/>
 
-
+### Feign Client to invoke other microservices
+* We want, from microservice Accounts, invoke method from other microservices Loands and Cards.
+* Add dependency of `OpenFeign` to pom.xml
+```xml
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+```
+* Add `@EnableFeignClients` to `AccountsApplication`  
+* Create Feign client to invoke other microservice endpoint:
+```java
+@FeignClient("cards")
+public interface CardsFeignClients {
+  @RequestMapping(method = RequestMethod.GET, value="all-cards", consumes = "application/json")
+  List<Card> getAllCards();
+}
+```  
 ## 9. Making microservices resilent.
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
 
