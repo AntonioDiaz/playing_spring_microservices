@@ -26,6 +26,7 @@
   - [Eureka: unregister microservice](#eureka-unregister-microservice)
   - [Heartbeat mechanism to Eureka server for clients](#heartbeat-mechanism-to-eureka-server-for-clients)
   - [Feign Client to invoke other microservices](#feign-client-to-invoke-other-microservices)
+  - [Update Docker images](#update-docker-images)
 - [9. Making microservices resilent.](#9-making-microservices-resilent)
 - [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
@@ -388,6 +389,18 @@ public interface CardsFeignClients {
   List<Card> getAllCards();
 }
 ```  
+### Update Docker images
+
+* On Accounts
+  * Generate the jar file:  
+    `mvn clean install -Dmaven.test.skip=true`  
+  * Generate the Docker image:  
+    `docker build . -t adiazarroyo/accounts`  
+* On Cards
+  * `mvn spring-boot:build-image -Dmaven.test.skip=true`
+
+
+
 ## 9. Making microservices resilent.
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
 
