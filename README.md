@@ -485,7 +485,7 @@ public List<Card> cards() {
   return cardsFeignClients.getAllCards();
 }
 ```  
-* On `application.properties` add the next properties:
+* On `application.properties` add the next properties:  
 ```properties
 resilience4j.circuitbreaker.configs.default.registerHealthIndicator = true
 resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.minimumNumberOfCalls = 5
@@ -493,7 +493,12 @@ resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.failureRateTh
 resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.waitDurationOnOpenState = 30000
 resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.permittedNumberOfCallsInHalfOpenState = 2
 ```  
-* 
+* Url to check status and events:  
+http://localhost:8000/actuator/circuitbreakers  
+http://localhost:8000/actuator/circuitbreakerevents  
+<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_events.png" width="600"/>
+
+
 
 
 ### Retry pattern
