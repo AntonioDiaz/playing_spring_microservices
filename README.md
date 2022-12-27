@@ -28,6 +28,7 @@
   - [Feign Client to invoke other microservices](#feign-client-to-invoke-other-microservices)
   - [Update Docker images](#update-docker-images)
 - [9. Making microservices resilent](#9-making-microservices-resilent)
+  - [Circuit breaker pattern](#circuit-breaker-pattern)
 - [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
@@ -454,6 +455,9 @@ environment:
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
 
 <img src="https://antoniodiaz.github.io/images/microservices/resilence_patterns.png" width="600"/>
+
+### Circuit breaker pattern
+<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_pattern.png" width="600"/>
 
 
 ## 10. Handling rounting & cross cutting concerns in microservices
