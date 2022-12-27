@@ -391,14 +391,14 @@ public interface CardsFeignClients {
 ```  
 ### Update Docker images
 
-* On Accounts
+* For projects: accounts, loans, config-server and eureka-server
   * Generate the jar file:  
     `mvn clean install -Dmaven.test.skip=true`  
   * Generate the Docker image:  
     `docker build . -t adiazarroyo/accounts`  
 * On Cards
-  * `mvn spring-boot:build-image -Dmaven.test.skip=true`
-  
+  * `mvn spring-boot:build-image -Dmaven.test.skip=true`  
+<img src="https://antoniodiaz.github.io/images/microservices/all_docker_images.png" width="600"/>
 
 
 ## 9. Making microservices resilent.
