@@ -400,6 +400,11 @@ public interface CardsFeignClients {
   * `mvn spring-boot:build-image -Dmaven.test.skip=true`  
 <img src="https://antoniodiaz.github.io/images/microservices/all_docker_images.png" width="600"/>
 
+* Push images to Docker Hub
+```shell
+docker push docker.io/adiazarroyo/accounts
+```
+<img src="https://antoniodiaz.github.io/images/microservices/all_docker_hub_images.png" width="600"/>
 
 ## 9. Making microservices resilent.
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
