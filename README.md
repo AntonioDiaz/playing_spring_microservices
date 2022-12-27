@@ -29,6 +29,8 @@
   - [Update Docker images](#update-docker-images)
 - [9. Making microservices resilent](#9-making-microservices-resilent)
   - [Circuit breaker pattern](#circuit-breaker-pattern)
+  - [Circuit breaker pattern implementation](#circuit-breaker-pattern-implementation)
+  - [Retry pattern](#retry-pattern)
 - [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
@@ -458,6 +460,44 @@ https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share
 
 ### Circuit breaker pattern
 <img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_pattern.png" width="600"/>
+
+<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_status.png" width="600"/>
+
+
+### Circuit breaker pattern implementation
+* Add dependency to `pom.xml`
+```xml
+<dependency>
+    <groupId>io.github.resilience4j</groupId>
+    <artifactId>resilience4j-spring-boot2</artifactId>
+    <version>2.0.2</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+```
+* Add `CircuitBreaker` on method that is invoking the microservice can can fail:
+```java
+@RequestMapping("/cards")
+@CircuitBreaker(name = "detailsForCustomerSupportApp")
+public List<Card> cards() {
+  return cardsFeignClients.getAllCards();
+}
+```  
+* On `application.properties` add the next properties:
+```properties
+resilience4j.circuitbreaker.configs.default.registerHealthIndicator = true
+resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.minimumNumberOfCalls = 5
+resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.failureRateThreshold = 50
+resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.waitDurationOnOpenState = 30000
+resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.permittedNumberOfCallsInHalfOpenState = 2
+```  
+* 
+
+
+### Retry pattern
+<img src="https://antoniodiaz.github.io/images/microservices/retry_pattern.png" width="600"/>
 
 
 ## 10. Handling rounting & cross cutting concerns in microservices

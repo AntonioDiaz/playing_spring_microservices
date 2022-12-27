@@ -3,6 +3,7 @@ package com.adiaz.accounts.controllers;
 import com.adiaz.accounts.config.AccountsServiceConfig;
 import com.adiaz.accounts.feign.CardsFeignClients;
 import com.adiaz.accounts.model.Card;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.AllArgsConstructor;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,7 @@ public class HomeController {
 
 
   @RequestMapping("/cards")
+  @CircuitBreaker(name = "detailsForCustomerSupportApp")
   public List<Card> cards() {
     return cardsFeignClients.getAllCards();
   }
