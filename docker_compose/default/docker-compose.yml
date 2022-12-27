@@ -1,5 +1,4 @@
 services:
-
   configserver:
     image: adiazarroyo/configserver:latest
     mem_limit: 700m
@@ -7,7 +6,6 @@ services:
       - "8071:8071"
     networks:
       - adiaz-network
-
   eurekaserver:
     image: adiazarroyo/eurekaserver:latest
     mem_limit: 700m
@@ -20,13 +18,12 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 5s
-        max_attempts: 3
+        delay: 15s
+        max_attempts: 5
         window: 240s
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
-
   accounts:
     image: adiazarroyo/accounts:latest
     mem_limit: 700m
@@ -40,14 +37,13 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 240s
+        delay: 30s
+        max_attempts: 5
+        window: 350s
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
-
   loans:
     image: adiazarroyo/loans:latest
     mem_limit: 700m
@@ -61,14 +57,13 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 10s
-        max_attempts: 3
-        window: 240s
+        delay: 30s
+        max_attempts: 5
+        window: 350s
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
-
   cards:
     image: adiazarroyo/cards:latest
     mem_limit: 700m
@@ -82,13 +77,32 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 15s
-        max_attempts: 3
-        window: 240s
+        delay: 30s
+        max_attempts: 5
+        window: 350s
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
-
+  loans_2:
+    image: adiazarroyo/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8091:8100"
+    networks:
+      - adiaz-network
+    depends_on:
+      - configserver
+      - eurekaserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 30s
+        max_attempts: 5
+        window: 350s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
 networks:
   adiaz-network:

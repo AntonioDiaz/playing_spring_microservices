@@ -406,6 +406,8 @@ docker push docker.io/adiazarroyo/accounts
 ```
 <img src="https://antoniodiaz.github.io/images/microservices/all_docker_hub_images.png" width="600"/>
 
+* Update docker compose
+
 ## 9. Making microservices resilent.
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
 
