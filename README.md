@@ -5,43 +5,42 @@
 - [Links](#links)
 - [1. Introduction to Microservices Architecture](#1-introduction-to-microservices-architecture)
 - [2. Microservices \& Spring](#2-microservices--spring)
-- [3. Right sizing Microservices \& Identifying boundaries.](#3-right-sizing-microservices--identifying-boundaries)
-- [4. Getting started with creation of accounts, loands and cards microservices.](#4-getting-started-with-creation-of-accounts-loands-and-cards-microservices)
-- [5. Docker: who to build, deploy, scale our microservices using.](#5-docker-who-to-build-deploy-scale-our-microservices-using)
+- [3. Right sizing Microservices \& Identifying boundaries](#3-right-sizing-microservices--identifying-boundaries)
+- [4. Getting started with creation of accounts, loands and cards microservices](#4-getting-started-with-creation-of-accounts-loands-and-cards-microservices)
+- [5. Docker: who to build, deploy, scale our microservices using](#5-docker-who-to-build-deploy-scale-our-microservices-using)
   - [Docker images](#docker-images)
   - [Docker commands](#docker-commands)
   - [Buildpacks](#buildpacks)
   - [Docker hub](#docker-hub)
   - [Docker Compose](#docker-compose)
-- [6. Deep Dive on Cloud Native Apps \& 12factors.](#6-deep-dive-on-cloud-native-apps--12factors)
-- [7. Configurations managements in microservices.](#7-configurations-managements-in-microservices)
+- [6. Deep Dive on Cloud Native Apps \& 12factors](#6-deep-dive-on-cloud-native-apps--12factors)
+- [7. Configurations managements in microservices](#7-configurations-managements-in-microservices)
   - [Reading properties from local](#reading-properties-from-local)
   - [Reading properties from repository](#reading-properties-from-repository)
   - [Config microservice to read properties from config server](#config-microservice-to-read-properties-from-config-server)
   - [Refresh properties](#refresh-properties)
   - [Encryption \& decryption properties](#encryption--decryption-properties)
-- [8. Service discovery \& registration.](#8-service-discovery--registration)
+- [8. Service discovery \& registration](#8-service-discovery--registration)
   - [Example: Eureka Server](#example-eureka-server)
   - [Example: Microservice Eureka client](#example-microservice-eureka-client)
   - [Eureka: unregister microservice](#eureka-unregister-microservice)
   - [Heartbeat mechanism to Eureka server for clients](#heartbeat-mechanism-to-eureka-server-for-clients)
   - [Feign Client to invoke other microservices](#feign-client-to-invoke-other-microservices)
   - [Update Docker images](#update-docker-images)
-- [9. Making microservices resilent.](#9-making-microservices-resilent)
-- [10. Handling rounting \& cross cutting concerns in microservices.](#10-handling-rounting--cross-cutting-concerns-in-microservices)
-- [11. Distributed tracing \& log aggregation in microservices.](#11-distributed-tracing--log-aggregation-in-microservices)
-- [12. Monitoring microservices metrics \& health.](#12-monitoring-microservices-metrics--health)
-- [13. Automatic self-healing, scaling, deployments using Kubernetes.](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
-- [14. Deploying all microsevices into k8s cluster.](#14-deploying-all-microsevices-into-k8s-cluster)
-- [15. Deep Dive on Helm.](#15-deep-dive-on-helm)
-- [16. Securing microservices using k8s service.](#16-securing-microservices-using-k8s-service)
-- [17. Securing microservices using OAuth2 client credentials grant flow.](#17-securing-microservices-using-oauth2-client-credentials-grant-flow)
-- [18. Securing microservices using OAuth2 client Authorization code grant flow.](#18-securing-microservices-using-oauth2-client-authorization-code-grant-flow)
-- [19. Introduction to K8s ingress \& service Mesh (Istio).](#19-introduction-to-k8s-ingress--service-mesh-istio)
-- [20. Thank you \& congratulations.](#20-thank-you--congratulations)
+- [9. Making microservices resilent](#9-making-microservices-resilent)
+- [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
+- [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
+- [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
+- [13. Automatic self-healing, scaling, deployments using Kubernetes](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
+- [14. Deploying all microsevices into k8s cluster](#14-deploying-all-microsevices-into-k8s-cluster)
+- [15. Deep Dive on Helm](#15-deep-dive-on-helm)
+- [16. Securing microservices using k8s service](#16-securing-microservices-using-k8s-service)
+- [17. Securing microservices using OAuth2 client credentials grant flow](#17-securing-microservices-using-oauth2-client-credentials-grant-flow)
+- [18. Securing microservices using OAuth2 client Authorization code grant flow](#18-securing-microservices-using-oauth2-client-authorization-code-grant-flow)
+- [19. Introduction to K8s ingress \& service Mesh (Istio)](#19-introduction-to-k8s-ingress--service-mesh-istio)
+- [20. Thank you \& congratulations](#20-thank-you--congratulations)
 
 ## Links
-
 * Course Udemy  
 https://www.udemy.com/course/master-microservices-with-spring-docker-kubernetes/  
 
@@ -50,19 +49,18 @@ https://github.com/eazybytes/microservices-with-spring-sectionwise-code
 
 
 ## 1. Introduction to Microservices Architecture
-
 https://drive.google.com/file/d/1JXyE1jOX0GEd1WWm5ShxKjkW2XlqBEsM/view?usp=share_link
 
 ## 2. Microservices & Spring
 https://drive.google.com/file/d/1M7bqXiCUi1OzNvoClEVUEdqlarESYfiv/view?usp=share_link
 
-## 3. Right sizing Microservices & Identifying boundaries.
+## 3. Right sizing Microservices & Identifying boundaries
 https://drive.google.com/file/d/1TAwGoKeWqnbb7umSPZyaTHrsJSN16tfK/view?usp=share_link
 
-## 4. Getting started with creation of accounts, loands and cards microservices.
+## 4. Getting started with creation of accounts, loands and cards microservices
 Spring Boot review.
 
-## 5. Docker: who to build, deploy, scale our microservices using.
+## 5. Docker: who to build, deploy, scale our microservices using
 https://drive.google.com/file/d/1z5gSyhPKgY54PXpMP3Z89nfuDROWhP6t/view?usp=share_link
 
 Using Docker
@@ -177,12 +175,12 @@ networks:
 ```
 
 
-## 6. Deep Dive on Cloud Native Apps & 12factors.
+## 6. Deep Dive on Cloud Native Apps & 12factors
 https://drive.google.com/file/d/1LkgLX0OHsE9qKtLyVgNx5rI_hf575_FT/view?usp=share_link  
 
 https://12factor.net/
 
-## 7. Configurations managements in microservices.
+## 7. Configurations managements in microservices
 https://drive.google.com/file/d/1z9hP2WdREh_hdKb1eHcESUJiCe6NAzHa/view?usp=share_link
 
 Steps:
@@ -295,7 +293,7 @@ encrypt:
 ```properties
 accounts.password={cipher}87be552649d61b025b42e4f3a2272e5873da64b2652f9da6bde18ad77adb7e17
 ```  
-## 8. Service discovery & registration.
+## 8. Service discovery & registration
 https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share_link
 
 <img src="https://antoniodiaz.github.io/images/microservices/service_discovery.png" width="600"/>  
@@ -390,7 +388,6 @@ public interface CardsFeignClients {
 }
 ```  
 ### Update Docker images
-
 * For projects: accounts, loans, config-server and eureka-server
   * Generate the jar file:  
     `mvn clean install -Dmaven.test.skip=true`  
@@ -407,31 +404,79 @@ docker push docker.io/adiazarroyo/accounts
 <img src="https://antoniodiaz.github.io/images/microservices/all_docker_hub_images.png" width="600"/>
 
 * Update docker compose
+  * Adding new service:
+```yml
+eurekaserver:
+image: adiazarroyo/eurekaserver:latest
+mem_limit: 700m
+ports:
+  - "8070:8070"
+networks:
+  - adiaz-network
+depends_on:
+  - configserver
+deploy:
+  restart_policy:
+    condition: on-failure
+    delay: 15s
+    max_attempts: 5
+    window: 240s
+environment:
+  SPRING_PROFILES_ACTIVE: default
+  SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+```
+* On the previous service add the new one on depens_on seccion, and the environment.
+```yml
+ accounts:
+    image: adiazarroyo/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8000"
+    networks:
+      - adiaz-network
+    depends_on:
+      - configserver
+      - eurekaserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 30s
+        max_attempts: 5
+        window: 350s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
+```
 
-## 9. Making microservices resilent.
+
+## 9. Making microservices resilent
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
 
-## 10. Handling rounting & cross cutting concerns in microservices.
+<img src="https://antoniodiaz.github.io/images/microservices/resilence_patterns.png" width="600"/>
+
+
+## 10. Handling rounting & cross cutting concerns in microservices
 https://drive.google.com/file/d/1fytRJcWtI4ytSZA8958dIrsdNNb99nQT/view?usp=share_link
 
-## 11. Distributed tracing & log aggregation in microservices.
+## 11. Distributed tracing & log aggregation in microservices
 https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share_link
 
-## 12. Monitoring microservices metrics & health.
+## 12. Monitoring microservices metrics & health
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
 
-## 13. Automatic self-healing, scaling, deployments using Kubernetes.
+## 13. Automatic self-healing, scaling, deployments using Kubernetes
 
-## 14. Deploying all microsevices into k8s cluster.
+## 14. Deploying all microsevices into k8s cluster
 
-## 15. Deep Dive on Helm.
+## 15. Deep Dive on Helm
 
-## 16. Securing microservices using k8s service.
+## 16. Securing microservices using k8s service
 
-## 17. Securing microservices using OAuth2 client credentials grant flow.
+## 17. Securing microservices using OAuth2 client credentials grant flow
 
-## 18. Securing microservices using OAuth2 client Authorization code grant flow.
+## 18. Securing microservices using OAuth2 client Authorization code grant flow
 
-## 19. Introduction to K8s ingress & service Mesh (Istio).
+## 19. Introduction to K8s ingress & service Mesh (Istio)
 
-## 20. Thank you & congratulations.
+## 20. Thank you & congratulations
