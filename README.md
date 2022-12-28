@@ -510,9 +510,11 @@ private List<Card> cardsFallbackMethod(Throwable t) {
   return List.of();
 }
 ```
-* Add the fallbackmethod to annotation `@CircuitBreaker`
+* Add the `fallbackMethod` to annotation `@CircuitBreaker`
 ```java
-@CircuitBreaker(name = "detailsForCustomerSupportApp", fallbackMethod = "cardsFallbackMethod")
+@CircuitBreaker(
+  name = "detailsForCustomerSupportApp", 
+  fallbackMethod = "cardsFallbackMethod")
 ```
 
 ### Retry pattern
