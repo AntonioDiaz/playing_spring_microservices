@@ -665,7 +665,7 @@ eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
 
 ### Customize routing
 * Adding a Context path to the url:
-* On `GatewayServerAppliction` create the bean `RouteLocator`
+* On `GatewayServerApplication` create the bean `RouteLocator`
 ```java
   @Bean
   public RouteLocator myRoutes(RouteLocatorBuilder builder) {
