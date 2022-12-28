@@ -613,10 +613,55 @@ https://spring.io/projects/spring-cloud-gateway
 ```
 * Add annotation to register microservice on Eureka server: `@EnableFeignClients`
 * Adding properties to `properties.yml`
-```properties
-
+```yml
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  config:
+    import: optional:configserver:http://localhost:8071
+  application:
+    name: gatewayserver
+info:
+  app:
+    name: Gateway Server Microservice
+    description: Adiaz Bank Microservice Application
+    version: 1.0.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+logging:
+  level:
+    com.adiaz.gatewayservice: DEBUG
 ```
-* 
+* Create properties file on github config repository, file must be call with same name than `spring.application.name` from the `application.yml` of the project:
+```properties
+server.port = 8072
+eureka.instance.preferIpAddress = true
+eureka.client.registerWithEureka = true
+eureka.client.fetchregistry = true
+eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
+```
+
+* Start projects config_server and eureka_server and then the gateway  
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_on_eureka_dashboard.png" width="800"/>
+
+<img src="https://antoniodiaz.github.io/images/microservices/spring_gateway_routes.png" width="800"/>
+
+
+* Gateway request example
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_accounts.png" width="400"/>
+
+
 
 ## 11. Distributed tracing & log aggregation in microservices
 https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share_link
