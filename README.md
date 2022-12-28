@@ -544,6 +544,9 @@ resilience4j:
         waitDuration: 2000
 ```
 
+* Url to check status and events:
+http://localhost:8000/actuator/retryevents
+
 ### Rate Limitter pattern
 <img src="https://antoniodiaz.github.io/images/microservices/rate_limitter_pattern.png" width="600"/>
 
@@ -575,13 +578,11 @@ resilience4j:
 ### Bulkhead pattern
 <img src="https://antoniodiaz.github.io/images/microservices/bulkhead_pattern.png" width="600"/>
 
-
-* Url to check status and events:
-http://localhost:8000/actuator/retryevents
-
-
 ## 10. Handling rounting & cross cutting concerns in microservices
 https://drive.google.com/file/d/1fytRJcWtI4ytSZA8958dIrsdNNb99nQT/view?usp=share_link
+
+<img src="https://antoniodiaz.github.io/images/microservices/chapter_10.png" width="800"/>
+
 
 ## 11. Distributed tracing & log aggregation in microservices
 https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share_link
