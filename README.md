@@ -583,7 +583,11 @@ https://drive.google.com/file/d/1fytRJcWtI4ytSZA8958dIrsdNNb99nQT/view?usp=share
 
 <img src="https://antoniodiaz.github.io/images/microservices/chapter_10.png" width="800"/>
 
+https://spring.io/projects/spring-cloud-gateway
+
 <img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_gateway.png" width="800"/>
+
+<img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_gateway_internal_architecture.png" width="800"/>
 
 
 ## 11. Distributed tracing & log aggregation in microservices
