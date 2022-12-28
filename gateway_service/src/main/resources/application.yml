@@ -4,6 +4,7 @@ spring:
       discovery:
         locator:
           enabled: true
+          lowerCaseServiceId: true
   config:
     import: optional:configserver:http://localhost:8071
   application:

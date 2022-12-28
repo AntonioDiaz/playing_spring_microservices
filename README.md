@@ -619,6 +619,7 @@ spring:
     gateway:
       discovery:
         locator:
+          lowerCaseServiceId: true
           enabled: true
   config:
     import: optional:configserver:http://localhost:8071
