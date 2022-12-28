@@ -70,10 +70,10 @@ https://drive.google.com/file/d/1z5gSyhPKgY54PXpMP3Z89nfuDROWhP6t/view?usp=share
 
 Using Docker
 * Virtual Machines VS Containers
-<img src="https://antoniodiaz.github.io/images/microservices/microservices_virtualmachines_vs_containers.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/microservices_virtualmachines_vs_containers.png" width="800"/>  
 
 * Docker architecture
-<img src="https://antoniodiaz.github.io/images/microservices/intro_docker.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/intro_docker.png" width="800"/>  
 
 ### Docker images
 Create a file named `Dockerfile` (without extension) on root folder
@@ -136,7 +136,7 @@ ENTRYPOINT ["java","-jar","/accounts-0.0.1-SNAPSHOT.jar"]
 https://hub.docker.com/  
 `docker push docker.io/adiazarroyo/accounts:latest`  
 
-<img src="https://antoniodiaz.github.io/images/microservices/docker_hub.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/docker_hub.png" width="800"/>  
 
 ### Docker Compose
 * https://docs.docker.com/compose/gettingstarted/  
@@ -190,7 +190,7 @@ https://drive.google.com/file/d/1z9hP2WdREh_hdKb1eHcESUJiCe6NAzHa/view?usp=share
 
 Steps:
 1. Create spring project with dependences: Actuator and Config Server  
-<img src="https://antoniodiaz.github.io/images/microservices/config_server.png" width="600"/> 
+<img src="https://antoniodiaz.github.io/images/microservices/config_server.png" width="800"/> 
 
 2. Add annotation: `@EnableConfigServer`  
 ```java   
@@ -280,7 +280,7 @@ public class AccountsServiceConfig {
 
 * Invoke post to refresh properties
   
-<img src="https://antoniodiaz.github.io/images/microservices/refresh_scope.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/refresh_scope.png" width="800"/>  
 
 ### Encryption & decryption properties
 * On properties server add the key to `bootstrap.yml`
@@ -292,7 +292,7 @@ encrypt:
   * POST: http://localhost:8071/encrypt  
   * POST: http://localhost:8071/decrypt  
   
-<img src="https://antoniodiaz.github.io/images/microservices/properties_encrypt.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/properties_encrypt.png" width="800"/>  
 
 * On the properties file add de property encrypted with the value returned by de endpoint, add `{cipher}` before the value to say the server this property is encrypted. 
 ```properties
@@ -301,7 +301,7 @@ accounts.password={cipher}87be552649d61b025b42e4f3a2272e5873da64b2652f9da6bde18a
 ## 8. Service discovery & registration
 https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share_link
 
-<img src="https://antoniodiaz.github.io/images/microservices/service_discovery.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/service_discovery.png" width="800"/>  
 
 <img src="https://antoniodiaz.github.io/images/microservices/service_discovery_pattern.png" width="600"/> 
 
@@ -310,7 +310,7 @@ https://drive.google.com/file/d/1lhIo4iszxHKwiI5yr5y0wcCmIhKYoqj7/view?usp=share
   * `Actuator`
   * `Eureka Server`
   * `Config Client`  
-<img src="https://antoniodiaz.github.io/images/microservices/eureka_config_server.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/eureka_config_server.png" width="800"/>  
 
 * Add annotation `@EnableEurekaServer`
 * Add properties to application properties:
@@ -327,7 +327,7 @@ eureka.client.fetchRegistry=false
 eureka.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/
 ```  
 * Start Eureka Server project and have a look to the Eureka dashboard:  
-<img src="https://antoniodiaz.github.io/images/microservices/eureka.png" width="600"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/eureka.png" width="800"/>  
 
 ### Example: Microservice Eureka client
 * Add dependencies to `pom.xml`, for now only is required: `spring-cloud-starter-netflix-eureka-client`
@@ -360,7 +360,7 @@ management.endpoint.shutdown.enabled = true
 ```  
 * Start Accounts projects  
 
-<img src="https://antoniodiaz.github.io/images/microservices/eureka_dashboard.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/eureka_dashboard.png" width="800"/>
 
 * Details about of the service
 http://localhost:8070/eureka/apps/accounts
@@ -372,7 +372,7 @@ http://localhost:8070/eureka/apps/accounts
 ### Heartbeat mechanism to Eureka server for clients
 Every 30 seconds client check the server and returns an error in case the Eureka server does not respond to the heartbeat.
 
-<img src="https://antoniodiaz.github.io/images/microservices/heartbeat_eureka_error.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/heartbeat_eureka_error.png" width="800"/>
 
 ### Feign Client to invoke other microservices
 * We want, from microservice Accounts, invoke method from other microservices Loands and Cards.
@@ -400,13 +400,13 @@ public interface CardsFeignClients {
     `docker build . -t adiazarroyo/accounts`  
 * On Cards
   * `mvn spring-boot:build-image -Dmaven.test.skip=true`  
-<img src="https://antoniodiaz.github.io/images/microservices/all_docker_images.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/all_docker_images.png" width="800"/>
 
 * Push images to Docker Hub
 ```shell
 docker push docker.io/adiazarroyo/accounts
 ```
-<img src="https://antoniodiaz.github.io/images/microservices/all_docker_hub_images.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/all_docker_hub_images.png" width="800"/>
 
 * Update docker compose
   * Adding new service:
@@ -458,12 +458,12 @@ environment:
 ## 9. Making microservices resilent
 https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share_link
 
-<img src="https://antoniodiaz.github.io/images/microservices/resilence_patterns.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/resilence_patterns.png" width="800"/>
 
 ### Circuit breaker pattern
 <img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_pattern.png" width="600"/>
 
-<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_status.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_status.png" width="800"/>
 
 
 ### Circuit breaker pattern implementation
@@ -504,7 +504,7 @@ resilience4j:
 * Url to check status and events:  
 http://localhost:8000/actuator/circuitbreakers  
 http://localhost:8000/actuator/circuitbreakerevents  
-<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_events.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_events.png" width="800"/>
 
 * Fallback: create private method that receives same parameters that the one you want to protect, and another `Throwable` with the exception:
 ```java
@@ -520,7 +520,7 @@ private List<Card> cardsFallbackMethod(Throwable t) {
 ```
 
 ### Retry pattern
-<img src="https://antoniodiaz.github.io/images/microservices/retry_pattern.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/retry_pattern.png" width="800"/>
 
 * Method annotation
 ```java
@@ -548,7 +548,7 @@ resilience4j:
 http://localhost:8000/actuator/retryevents
 
 ### Rate Limitter pattern
-<img src="https://antoniodiaz.github.io/images/microservices/rate_limitter_pattern.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/rate_limitter_pattern.png" width="800"/>
 
 * Method:
 ```java
@@ -576,7 +576,7 @@ resilience4j:
         timeout-duration: 0s
 ```
 ### Bulkhead pattern
-<img src="https://antoniodiaz.github.io/images/microservices/bulkhead_pattern.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/bulkhead_pattern.png" width="800"/>
 
 ## 10. Handling rounting & cross cutting concerns in microservices
 https://drive.google.com/file/d/1fytRJcWtI4ytSZA8958dIrsdNNb99nQT/view?usp=share_link
