@@ -671,11 +671,11 @@ eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
   public RouteLocator myRoutes(RouteLocatorBuilder builder) {
     return builder.routes()
             .route(p ->
-                    p.path("/adiaz/accounts/**")
+                    p.path("/adiaz/loans/**")
                             .filters(f -> f
-                                    .rewritePath("/adiaz/accounts/(?<segment>.*)", "/${segment}")
+                                    .rewritePath("/adiaz/loans/(?<segment>.*)", "/${segment}")
                                     .addRequestHeader("X-Response-Time", new Date().toString()))
-                            .uri("lb://ACCOUNTS"))
+                            .uri("lb://LOANS"))
             .build();
   }
 ```
