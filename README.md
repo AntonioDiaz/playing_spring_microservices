@@ -486,12 +486,18 @@ public List<Card> cards() {
 }
 ```  
 * On `application.properties` add the next properties:  
-```properties
-resilience4j.circuitbreaker.configs.default.registerHealthIndicator = true
-resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.minimumNumberOfCalls = 5
-resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.failureRateThreshold = 50
-resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.waitDurationOnOpenState = 30000
-resilience4j.circuitbreaker.instances.detailsForCustomerSupportApp.permittedNumberOfCallsInHalfOpenState = 2
+```yaml
+resilience4j:
+    circuitbreaker:
+        configs:
+            default:
+                registerHealthIndicator: true
+        instances:
+            detailsForCustomerSupportApp:
+                failureRateThreshold: 50
+                minimumNumberOfCalls: 5
+                permittedNumberOfCallsInHalfOpenState: 2
+                waitDurationOnOpenState: 30000
 ```  
 * Url to check status and events:  
 http://localhost:8000/actuator/circuitbreakers  
