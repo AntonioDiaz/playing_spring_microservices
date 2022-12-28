@@ -1,8 +1,25 @@
 management:
   health:
+    ratelimiters:
+      enabled: true
     circuitbreakers:
       enabled: true
 resilience4j:
+  ratelimiter:
+    metrics:
+      enabled: true
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      hello:
+        allow-health-indicator-to-fail: true
+        event-consumer-buffer-size: 50
+        limit-for-period: 5
+        limit-refresh-period: 60s
+        register-health-indicator: true
+        subscribe-for-events: true
+        timeout-duration: 0s
   retry:
     configs:
       default:

@@ -547,6 +547,31 @@ resilience4j:
 ### Rate Limitter pattern
 <img src="https://antoniodiaz.github.io/images/microservices/rate_limitter_pattern.png" width="600"/>
 
+* Method:
+```java
+@GetMapping("/hello")
+@RateLimiter(name = "hello", fallbackMethod = "helloLimit")
+public String hello() {
+  log.info("Calling cards-rate-limit");
+  return "hello";
+}
+```
+* Properties:
+```yml
+resilience4j:
+  ratelimiter:
+    metrics:
+      enabled: true
+    instances:
+      hello:
+        allow-health-indicator-to-fail: true
+        event-consumer-buffer-size: 50
+        limit-for-period: 5
+        limit-refresh-period: 60s
+        register-health-indicator: true
+        subscribe-for-events: true
+        timeout-duration: 0s
+```
 ### Bulkhead pattern
 <img src="https://antoniodiaz.github.io/images/microservices/bulkhead_pattern.png" width="600"/>
 
