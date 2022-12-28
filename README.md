@@ -36,6 +36,7 @@
 - [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
   - [Spring Cloud Gateway](#spring-cloud-gateway)
   - [Implement service as Spring Cloud Service](#implement-service-as-spring-cloud-service)
+  - [Customize routing](#customize-routing)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
 - [13. Automatic self-healing, scaling, deployments using Kubernetes](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
@@ -661,6 +662,24 @@ eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
 
 * Gateway request example
 <img src="https://antoniodiaz.github.io/images/microservices/gateway_accounts.png" width="400"/>
+
+### Customize routing
+* Adding a Context path to the url:
+* On `GatewayServerAppliction` create the bean `RouteLocator`
+```java
+  @Bean
+  public RouteLocator myRoutes(RouteLocatorBuilder builder) {
+    return builder.routes()
+            .route(p ->
+                    p.path("/adiaz/accounts/**")
+                            .filters(f -> f
+                                    .rewritePath("/adiaz/accounts/(?<segment>.*)", "/${segment}")
+                                    .addRequestHeader("X-Response-Time", new Date().toString()))
+                            .uri("lb://ACCOUNTS"))
+            .build();
+  }
+```
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_context_path.png" width="400"/>
 
 
 
