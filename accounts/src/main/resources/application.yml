@@ -3,12 +3,20 @@ management:
     circuitbreakers:
       enabled: true
 resilience4j:
+  retry:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      cards-retry:
+        maxRetryAttempts: 3
+        waitDuration: 2000
   circuitbreaker:
     configs:
       default:
         registerHealthIndicator: true
     instances:
-      detailsForCustomerSupportApp:
+      cards-circuit-breaker:
         failureRateThreshold: 50
         minimumNumberOfCalls: 5
         permittedNumberOfCallsInHalfOpenState: 2

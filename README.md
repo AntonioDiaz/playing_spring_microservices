@@ -31,6 +31,8 @@
   - [Circuit breaker pattern](#circuit-breaker-pattern)
   - [Circuit breaker pattern implementation](#circuit-breaker-pattern-implementation)
   - [Retry pattern](#retry-pattern)
+  - [Rate Limitter pattern](#rate-limitter-pattern)
+  - [Bulkhead pattern](#bulkhead-pattern)
 - [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
@@ -485,7 +487,7 @@ public List<Card> cards() {
   return cardsFeignClients.getAllCards();
 }
 ```  
-* On `application.properties` add the next properties:  
+* On `application.yaml` add the next properties:  
 ```yaml
 resilience4j:
     circuitbreaker:
@@ -519,6 +521,38 @@ private List<Card> cardsFallbackMethod(Throwable t) {
 
 ### Retry pattern
 <img src="https://antoniodiaz.github.io/images/microservices/retry_pattern.png" width="600"/>
+
+* Method annotation
+```java
+@RequestMapping("/cards-retry")
+@Retry(name = "cards-retry")
+public List<Card> cardsWithRetry() {
+  log.info("Calling cards-retry");
+  return cardsFeignClients.getAllCards();
+}
+```  
+* Properties for `application.yaml`  
+```yaml
+resilience4j:
+  retry:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      cards-retry:
+        maxRetryAttempts: 3
+        waitDuration: 2000
+```
+
+### Rate Limitter pattern
+<img src="https://antoniodiaz.github.io/images/microservices/rate_limitter_pattern.png" width="600"/>
+
+### Bulkhead pattern
+<img src="https://antoniodiaz.github.io/images/microservices/bulkhead_pattern.png" width="600"/>
+
+
+* Url to check status and events:
+http://localhost:8000/actuator/retryevents
 
 
 ## 10. Handling rounting & cross cutting concerns in microservices
