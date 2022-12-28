@@ -461,7 +461,7 @@ https://drive.google.com/file/d/1AbEmLa_Q-jQSPjqneUPhIg_Ehpiz-oYD/view?usp=share
 <img src="https://antoniodiaz.github.io/images/microservices/resilence_patterns.png" width="800"/>
 
 ### Circuit breaker pattern
-<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_pattern.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_pattern.png" width="800"/>
 
 <img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_status.png" width="800"/>
 
