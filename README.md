@@ -34,6 +34,8 @@
   - [Rate Limitter pattern](#rate-limitter-pattern)
   - [Bulkhead pattern](#bulkhead-pattern)
 - [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
+  - [Spring Cloud Gateway](#spring-cloud-gateway)
+  - [Implement service as Spring Cloud Service](#implement-service-as-spring-cloud-service)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
 - [13. Automatic self-healing, scaling, deployments using Kubernetes](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
@@ -583,12 +585,38 @@ https://drive.google.com/file/d/1fytRJcWtI4ytSZA8958dIrsdNNb99nQT/view?usp=share
 
 <img src="https://antoniodiaz.github.io/images/microservices/chapter_10.png" width="800"/>
 
-https://spring.io/projects/spring-cloud-gateway
-
+### Spring Cloud Gateway
+https://spring.io/projects/spring-cloud-gateway  
 <img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_gateway.png" width="800"/>
 
 <img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_gateway_internal_architecture.png" width="800"/>
 
+### Implement service as Spring Cloud Service
+* Create new Spring Boot project with this dependencies:
+  * `Gateway`
+  * `Actuator` 
+  * `Eureka discovery client`
+  * `Config Client`
+  * `Dev Tools`
+
+* Add plugin to pom.xml go generate Docker image:
+```xml
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <image>
+            <name>adiazarroyo/${project.artifactId}</name>
+        </image>
+    </configuration>
+</plugin>
+```
+* Add annotation to register microservice on Eureka server: `@EnableFeignClients`
+* Adding properties to `properties.yml`
+```properties
+
+```
+* 
 
 ## 11. Distributed tracing & log aggregation in microservices
 https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share_link

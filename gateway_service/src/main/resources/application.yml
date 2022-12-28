@@ -1,0 +1,30 @@
+server:
+  port: 8300
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  config:
+    import: optional:configserver:http://localhost:8071
+  application:
+    name: accounts
+info:
+  app:
+    name: Gateway Server Microservice
+    description: Adiaz Bank Microservice Application
+    version: 1.0.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+logging:
+  level:
+    com.adiaz.gatewayservice: DEBUG
