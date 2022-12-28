@@ -32,9 +32,13 @@ public class HomeController {
 
 
   @RequestMapping("/cards")
-  @CircuitBreaker(name = "detailsForCustomerSupportApp")
+  @CircuitBreaker(name = "detailsForCustomerSupportApp", fallbackMethod = "cardsFallbackMethod")
   public List<Card> cards() {
     return cardsFeignClients.getAllCards();
+  }
+
+  private List<Card> cardsFallbackMethod(Throwable t) {
+    return List.of();
   }
 
 }

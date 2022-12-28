@@ -504,8 +504,16 @@ http://localhost:8000/actuator/circuitbreakers
 http://localhost:8000/actuator/circuitbreakerevents  
 <img src="https://antoniodiaz.github.io/images/microservices/circuit_breaker_events.png" width="600"/>
 
-
-
+* Fallback: create private method that receives same parameters that the one you want to protect, and another `Throwable` with the exception:
+```java
+private List<Card> cardsFallbackMethod(Throwable t) {
+  return List.of();
+}
+```
+* Add the fallbackmethod to annotation `@CircuitBreaker`
+```java
+@CircuitBreaker(name = "detailsForCustomerSupportApp", fallbackMethod = "cardsFallbackMethod")
+```
 
 ### Retry pattern
 <img src="https://antoniodiaz.github.io/images/microservices/retry_pattern.png" width="600"/>
