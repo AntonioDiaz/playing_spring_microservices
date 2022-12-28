@@ -35,7 +35,7 @@
   - [Bulkhead pattern](#bulkhead-pattern)
 - [10. Handling rounting \& cross cutting concerns in microservices](#10-handling-rounting--cross-cutting-concerns-in-microservices)
   - [Spring Cloud Gateway](#spring-cloud-gateway)
-  - [Implement service as Spring Cloud Service](#implement-service-as-spring-cloud-service)
+  - [Implement service as Spring Cloud Gateway](#implement-service-as-spring-cloud-gateway)
   - [Customize routing](#customize-routing)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
@@ -592,7 +592,7 @@ https://spring.io/projects/spring-cloud-gateway
 
 <img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_gateway_internal_architecture.png" width="800"/>
 
-### Implement service as Spring Cloud Service
+### Implement service as Spring Cloud Gateway
 * Create new Spring Boot project with this dependencies:
   * `Gateway`
   * `Actuator` 
