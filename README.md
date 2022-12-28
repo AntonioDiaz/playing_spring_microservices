@@ -679,7 +679,7 @@ eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
             .build();
   }
 ```
-<img src="https://antoniodiaz.github.io/images/microservices/gateway_context_path.png" width="400"/>
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_context.png" width="400"/>
 
 
 
