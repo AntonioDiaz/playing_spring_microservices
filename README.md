@@ -686,13 +686,13 @@ eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
 * Adding a header to the request and response in a filter on the Gateway, like this:  
 https://github.com/eazybytes/microservices-with-spring-sectionwise-code/blob/master/section_10/gatewayserver/src/main/java/com/eaztbytes/gatewayserver/filters/TraceFilter.java  
   
-<img src="https://antoniodiaz.github.io/images/microservices/gateway_add_header_request.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_add_header_request.png" width="800"/>
   
-<img src="https://antoniodiaz.github.io/images/microservices/gateway_add_header_response.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_add_header_response.png" width="800"/>
   
 
 * Then the it's possible to read the header:
-<img src="https://antoniodiaz.github.io/images/microservices/gateway_read_header.png" width="400"/>
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_reading_header.png" width="600"/>
   
 
 
