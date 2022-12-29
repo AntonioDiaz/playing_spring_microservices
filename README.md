@@ -37,6 +37,7 @@
   - [Spring Cloud Gateway](#spring-cloud-gateway)
   - [Implement service as Spring Cloud Gateway](#implement-service-as-spring-cloud-gateway)
   - [Customize routing](#customize-routing)
+  - [Tracing \& Logging](#tracing--logging)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
 - [13. Automatic self-healing, scaling, deployments using Kubernetes](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
@@ -680,6 +681,19 @@ eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
   }
 ```
 <img src="https://antoniodiaz.github.io/images/microservices/gateway_context.png" width="400"/>
+
+### Tracing & Logging
+* Adding a header to the request and response in a filter on the Gateway, like this:  
+https://github.com/eazybytes/microservices-with-spring-sectionwise-code/blob/master/section_10/gatewayserver/src/main/java/com/eaztbytes/gatewayserver/filters/TraceFilter.java  
+  
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_add_header_request.png" width="600"/>
+  
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_add_header_response.png" width="600"/>
+  
+
+* Then the it's possible to read the header:
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_read_header.png" width="400"/>
+  
 
 
 
