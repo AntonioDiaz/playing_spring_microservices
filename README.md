@@ -704,7 +704,7 @@ https://github.com/eazybytes/microservices-with-spring-sectionwise-code/blob/mas
 ## 11. Distributed tracing & log aggregation in microservices
 https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share_link
 
-<img src="https://antoniodiaz.github.io/images/microservices/tracing_log.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/tracing_logs.png" width="800"/>
 
 ## 12. Monitoring microservices metrics & health
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
