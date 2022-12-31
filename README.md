@@ -40,6 +40,8 @@
   - [Tracing \& Logging](#tracing--logging)
   - [Update Docker Compose](#update-docker-compose)
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
+  - [Spring Cloud Sleuth](#spring-cloud-sleuth)
+  - [Zipkin](#zipkin)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
 - [13. Automatic self-healing, scaling, deployments using Kubernetes](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
 - [14. Deploying all microsevices into k8s cluster](#14-deploying-all-microsevices-into-k8s-cluster)
@@ -707,6 +709,24 @@ https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share
 <img src="https://antoniodiaz.github.io/images/microservices/tracing_logs.png" width="800"/>
 
 <img src="https://antoniodiaz.github.io/images/microservices/tracing_log_aggregation.png" width="800"/>
+
+### Spring Cloud Sleuth
+https://spring.io/projects/spring-cloud-sleuth  
+* Spring Cloud Sleuth provides Spring Boot auto-configuration for distributed tracing.
+<img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_sleuth.png" width="800"/>
+
+* Add dependency to pom.xml
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-sleuth</artifactId>
+</dependency>
+```
+ 
+
+### Zipkin
+https://github.com/openzipkin/zipkin  
+<img src="https://antoniodiaz.github.io/images/microservices/zipkin.png" width="800"/>
 
 ## 12. Monitoring microservices metrics & health
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
