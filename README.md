@@ -693,18 +693,20 @@ https://github.com/eazybytes/microservices-with-spring-sectionwise-code/blob/mas
   
 
 * Then the it's possible to read the header:
-<img src="https://antoniodiaz.github.io/images/microservices/gateway_reading_header.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_reading_header.png" width="800"/>
 
 
 ### Update Docker Compose
 https://github.com/eazybytes/microservices-with-spring-sectionwise-code/blob/master/section_10/accounts/docker-compose/default/docker-compose.yml
 
-<img src="https://antoniodiaz.github.io/images/microservices/gateway_docker_compose.png" width="600"/>
+<img src="https://antoniodiaz.github.io/images/microservices/gateway_docker_compose.png" width="800"/>
 
 ## 11. Distributed tracing & log aggregation in microservices
 https://drive.google.com/file/d/1YruqrgcYmyjzaGfYantxM7ZK0e2lwh_F/view?usp=share_link
 
 <img src="https://antoniodiaz.github.io/images/microservices/tracing_logs.png" width="800"/>
+
+<img src="https://antoniodiaz.github.io/images/microservices/tracing_log_aggregation.png" width="800"/>
 
 ## 12. Monitoring microservices metrics & health
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
