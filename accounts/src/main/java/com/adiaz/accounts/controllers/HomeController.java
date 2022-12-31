@@ -39,7 +39,10 @@ public class HomeController {
   @GetMapping("/cards")
   @CircuitBreaker(name = "cards-circuit-breaker", fallbackMethod = "cardsFallbackMethod")
   public List<Card> cards() {
-    return cardsFeignClients.getAllCards();
+    log.info("Start from accounts getting cards");
+    List<Card> allCards = cardsFeignClients.getAllCards();
+    log.info("after getAllCards from accounts getting cards");
+    return allCards;
   }
 
   @GetMapping("/cards-retry")

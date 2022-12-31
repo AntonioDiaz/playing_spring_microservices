@@ -715,7 +715,7 @@ https://spring.io/projects/spring-cloud-sleuth
 * Spring Cloud Sleuth provides Spring Boot auto-configuration for distributed tracing.
 <img src="https://antoniodiaz.github.io/images/microservices/spring_cloud_sleuth.png" width="800"/>
 
-* Add dependency to pom.xml
+* To use Sleuth on the projects just Add dependency to pom.xml
 ```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
@@ -723,10 +723,28 @@ https://spring.io/projects/spring-cloud-sleuth
 </dependency>
 ```
  
-
 ### Zipkin
+https://zipkin.io/
 https://github.com/openzipkin/zipkin  
 <img src="https://antoniodiaz.github.io/images/microservices/zipkin.png" width="800"/>
+
+* To use Zipkin on the projects:
+  * Add dependency to pom.xml
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+</dependency>
+```
+
+  * Add propoerty to application.properties
+```properties
+spring.sleuth.sampler.percentage=1
+spring.zipkin.baseurl=http://localhost:9411/
+```  
+
+* Zipkin dashboard:
+<img src="https://antoniodiaz.github.io/images/microservices/zipkin_dashboard.png" width="800"/>  
 
 ## 12. Monitoring microservices metrics & health
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
