@@ -42,6 +42,7 @@
 - [11. Distributed tracing \& log aggregation in microservices](#11-distributed-tracing--log-aggregation-in-microservices)
   - [Spring Cloud Sleuth](#spring-cloud-sleuth)
   - [Zipkin](#zipkin)
+  - [Pushing Sleuth message into RabbitMQ](#pushing-sleuth-message-into-rabbitmq)
 - [12. Monitoring microservices metrics \& health](#12-monitoring-microservices-metrics--health)
 - [13. Automatic self-healing, scaling, deployments using Kubernetes](#13-automatic-self-healing-scaling-deployments-using-kubernetes)
 - [14. Deploying all microsevices into k8s cluster](#14-deploying-all-microsevices-into-k8s-cluster)
@@ -729,7 +730,7 @@ https://github.com/openzipkin/zipkin
 <img src="https://antoniodiaz.github.io/images/microservices/zipkin.png" width="800"/>
 
 * To use Zipkin on the projects:
-  * Add dependency to pom.xml
+  * Add dependency to `pom.xml`
 ```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
@@ -737,7 +738,7 @@ https://github.com/openzipkin/zipkin
 </dependency>
 ```
 
-  * Add propoerty to application.properties
+  * Add properties to `application.properties`
 ```properties
 spring.sleuth.sampler.percentage=1
 spring.zipkin.baseurl=http://localhost:9411/
@@ -746,8 +747,35 @@ spring.zipkin.baseurl=http://localhost:9411/
 * Zipkin dashboard:
 <img src="https://antoniodiaz.github.io/images/microservices/zipkin_dashboard.png" width="800"/>  
 
+### Pushing Sleuth message into RabbitMQ
+* Add dependency to `pom.xml`
+```xml
+<dependency>
+    <groupId>org.springframework.amqp</groupId>
+    <artifactId>spring-rabbit</artifactId>
+</dependency>
+```
+ 
+* Start RabbitMQ server
+```shell
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabgitmq:3-management
+```
+
+* Add properties to `application.properties`
+```properties
+spring.zipkin.sender.type=rabbit
+spring.zipkin.rabbitmq.queue=zipkin
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+```  
+
 ## 12. Monitoring microservices metrics & health
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
+
+<img src="https://antoniodiaz.github.io/images/microservices/monitoring.png" width="800"/>  
+
 
 ## 13. Automatic self-healing, scaling, deployments using Kubernetes
 
