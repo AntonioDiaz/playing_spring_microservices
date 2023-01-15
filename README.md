@@ -776,7 +776,7 @@ https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share
 
 <img src="https://antoniodiaz.github.io/images/microservices/monitoring.png" width="800"/>  
 
-<img src="https://antoniodiaz.github.io/images/microservices/monitoring_tools.png" width="800"/>  
+<img src="https://antoniodiaz.github.io/images/microservices/monitor_tools.png" width="800"/>  
 
 ## 13. Automatic self-healing, scaling, deployments using Kubernetes
 
