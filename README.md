@@ -779,17 +779,23 @@ https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share
 <img src="https://antoniodiaz.github.io/images/microservices/monitor_tools.png" width="800"/>  
 
 ## 13. Automatic self-healing, scaling, deployments using Kubernetes
+https://drive.google.com/file/d/1GkpnFPwNJtso7wMOxl4sgguHKwn_QLJh/view?usp=sharing
 
 ## 14. Deploying all microsevices into k8s cluster
 
 ## 15. Deep Dive on Helm
+https://drive.google.com/file/d/1vlXeMyMCMEPo23aY3ZDTuY42mVuywq-9/view?usp=share_link
 
 ## 16. Securing microservices using k8s service
+https://drive.google.com/file/d/1Kt9-ub55BXQeu3LYbw83f3xQX-tBu88T/view?usp=sharing
 
 ## 17. Securing microservices using OAuth2 client credentials grant flow
+https://drive.google.com/file/d/1Kt9-ub55BXQeu3LYbw83f3xQX-tBu88T/view?usp=sharing
 
 ## 18. Securing microservices using OAuth2 client Authorization code grant flow
+https://drive.google.com/file/d/1Kt9-ub55BXQeu3LYbw83f3xQX-tBu88T/view?usp=sharing
 
 ## 19. Introduction to K8s ingress & service Mesh (Istio)
+https://drive.google.com/file/d/1hOiWSHhd8inJmuX3Q3p672Cnpb0IyzG7/view?usp=share_link
 
 ## 20. Thank you & congratulations
