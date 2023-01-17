@@ -772,6 +772,7 @@ spring.rabbitmq.password=guest
 ```  
 
 ## 12. Monitoring microservices metrics & health
+
 https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share_link 
 
 <img src="https://antoniodiaz.github.io/images/microservices/monitoring.png" width="800"/>  
@@ -779,7 +780,12 @@ https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share
 <img src="https://antoniodiaz.github.io/images/microservices/monitor_tools.png" width="800"/>  
 
 ## 13. Automatic self-healing, scaling, deployments using Kubernetes
+
 https://drive.google.com/file/d/1GkpnFPwNJtso7wMOxl4sgguHKwn_QLJh/view?usp=sharing
+
+<img src="https://antoniodiaz.github.io/images/microservices/k8s.png" width="800"/>
+
+<img src="https://antoniodiaz.github.io/images/microservices/k8s_architecture.png" width="800"/>
 
 ## 14. Deploying all microsevices into k8s cluster
 
