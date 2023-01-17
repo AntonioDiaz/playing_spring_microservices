@@ -783,7 +783,7 @@ https://drive.google.com/file/d/115DU7wwXAH_6TEIz1akk9jxzko2YCsgl/view?usp=share
 
 https://drive.google.com/file/d/1GkpnFPwNJtso7wMOxl4sgguHKwn_QLJh/view?usp=sharing
 
-<img src="https://antoniodiaz.github.io/images/microservices/k8s.png" width="800"/>
+<img src="https://antoniodiaz.github.io/images/microservices/k8s_01.png" width="800"/>
 
 <img src="https://antoniodiaz.github.io/images/microservices/k8s_architecture.png" width="800"/>
 
